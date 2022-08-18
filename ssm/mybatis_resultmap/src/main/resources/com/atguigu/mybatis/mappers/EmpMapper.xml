@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mybatis.mappers.EmpMapper">
+    <!-- Emp getEmpByEmpId(@Param("empId")Integer empId); -->
+<!--    <select id="getEmpByEmpId" resultType="Emp">-->
+<!--        select emp_id empId, emp_name empName, age, gender from t_emp where emp_id = #{empId}-->
+<!--    </select>-->
+    <resultMap id="empResultMap" type="Emp">
+        <id column="emp_id" property="empId"></id>
+        <id column="emp_name" property="empName"></id>
+        <id column="age" property="age"></id>
+        <id column="gender" property="gender"></id>
+    </resultMap>
+    <select id="getEmpByEmpId" resultMap="empResultMap">
+        select * from t_emp where emp_id = #{empId}
+    </select>
+</mapper>
