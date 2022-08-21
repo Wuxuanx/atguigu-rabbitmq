@@ -9,16 +9,12 @@
 
     <!--    引入properties文件, 此后可以使用形式访问value-->
     <properties resource="jdbc.properties"></properties>
-<!--    -->
+    <!--    -->
     <settings>
-<!--        将下划线映射为驼峰命名-->
+        <!--        将下划线映射为驼峰命名-->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
-<!--        开启延迟加载-->
-        <setting name="lazyLoadingEnabled" value="true"/>
-<!--        按需加载-->
-        <setting name="aggressiveLazyLoading" value="false"/>
     </settings>
-    <!--    类别名-->
+    <!--    类别名-->3
     <typeAliases>
         <!--        方式1-->
         <!--        type: 起别名的类型
@@ -30,6 +26,10 @@
         <package name="com.atguigu.mybatis.pojo"/>
     </typeAliases>
 
+<!--    配置分页插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
     <!--    方式1-->
 
     <!--    配置连接数据库属性
@@ -113,13 +113,13 @@
     <!--    引入mybatis映射文件-->
     <mappers>
         <!--        引入单个映射文件-->
-<!--        <mapper resource="mappers/EmpMapper.xml"/>-->
+        <!--        <mapper resource="mappers/EmpMapper.xml"/>-->
         <!--        以包的形式引入映射文件:
             1. mapper接口和映射文件所在的包必须一致
             2. mapper接口名字和映射文件的名字必须一致
 -->
         <!--        这样需要在resource目录下创建相应文件夹<package name="com.atguigu.mybatis.mappers"/>-->
-<!--        在resources目录下创建文件夹时[多层],需要用com/atguigu/...这种形式,不可以使用com.atguigu....
+        <!--        在resources目录下创建文件夹时[多层],需要用com/atguigu/...这种形式,不可以使用com.atguigu....
             h后面这种形式相当于创建了一个名=为"com.atguigu...."的文件夹,并不是多层目录
 -->
         <package name="com.atguigu.mybatis.mappers"/>

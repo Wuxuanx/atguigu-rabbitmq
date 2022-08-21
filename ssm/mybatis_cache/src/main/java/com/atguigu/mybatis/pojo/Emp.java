@@ -1,10 +1,41 @@
 package com.atguigu.mybatis.pojo;
 
-public class Emp {
+import java.io.Serializable;
+
+/*实现二级缓存需要实现序列化*/
+public class Emp implements Serializable {
     private int empId;
     private String empName;
     private Integer age;
     private String gender;
+    private Dept dept;
+
+    public Dept getDept() {
+        return dept;
+    }
+
+    public void setDept(Dept dept) {
+        this.dept = dept;
+    }
+
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "empId=" + empId +
+                ", empName='" + empName + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", dept=" + dept +
+                '}';
+    }
+
+    public Emp(int empId, String empName, Integer age, String gender, Dept dept) {
+        this.empId = empId;
+        this.empName = empName;
+        this.age = age;
+        this.gender = gender;
+        this.dept = dept;
+    }
 
     public Emp() {
     }
@@ -48,13 +79,4 @@ public class Emp {
         this.gender = gender;
     }
 
-    @Override
-    public String toString() {
-        return "Emp{" +
-                "empId=" + empId +
-                ", empName='" + empName + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                '}';
-    }
 }
