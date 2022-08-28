@@ -2,15 +2,17 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mybatis_parameter" />
         <module name="mybatis_resultmap" />
         <module name="untitled" />
-        <module name="mybatis_mbg" />
         <module name="mybatis_helloworld" />
+        <module name="mybatis_parameter" />
+        <module name="mybatis_mbg" />
+        <module name="Spring_mvc_demo" />
         <module name="mybatis_cache" />
       </profile>
     </annotationProcessing>
@@ -20,6 +22,9 @@
       <module name="mybatis_mbg" target="8" />
       <module name="mybatis_parameter" target="8" />
       <module name="mybatis_resultmap" target="8" />
+      <module name="spring_mvc_demo" target="8" />
+      <module name="Spring_mvc_demo" target="8" />
+      <module name="spring_mvc_helloworld" target="8" />
       <module name="untitled" target="8" />
     </bytecodeTargetLevel>
   </component>
